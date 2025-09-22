@@ -12,17 +12,21 @@ int main() {
     string userName;
     int answer;
 
-    cout << "------------------------" << endl;
-    cout << "Math Tutor Version 1!" << endl;
-    cout << "------------------------" << endl;
-
-    cout << "Fun Math Facts:" << endl;
+    //math tutor display
+    cout << "************************************************************" << endl;
+    cout << "*                      MATH TUTOR                          *" << endl;
+    cout << "*              MATH TUTOR      MATH TUTOR                  *" << endl;
+    cout << "*          MATH TUTOR  MATH TUTOR  MATH TUTOR              *" << endl;
+    cout << "*              MATH TUTOR      MATH TUTOR                  *" << endl;
+    cout << "*                      MATH TUTOR                          *" << endl;
+    cout << "************************************************************" << endl;
+    cout << "   Fun Math Facts:" << endl;
     cout << "   *All math teachers have cats." << endl;
     cout << "   *Circles are as easy as pi." << endl;
     cout << "   *Do NOT try dividing by zero at home." << endl;
     cout << "   *All cats have a math teacher." << endl;
 
-    cout << "------------------------" << endl;
+    cout << "************************************************************" << endl;
 
     cout << "What is your name? ";
     cin >> userName;   //Get username
