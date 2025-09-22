@@ -1,17 +1,39 @@
 /***************************************************************************************
-* Title: Math Tutor V1
- * Author: Justin Kottwitz, AJ Wiese
- * Date: 2025.09.05
- * GitHub URL: https://github.com/JustinKottwitz/MathTutorV1
- * Description: Super basic math tutor that doesn't check the answer.
+* Title: Math Tutor V2
+ * Author: Davy Tran, AJ Wiese
+ * Date: 2025.09.22
+ * GitHub URL: https://github.com/AJ-Wiese/MathTutorV2
+ * Description: Super basic math tutor that has 4 random operators and even checks the problem!
  **************************************************************************************/
 #include <iostream> //Needed for cout and cin
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
 int main() {
+    srand(time(0));
+    // initializing variables
     string userName;
-    int answer;
-
+    // random math opperator
+    int mathType = (rand()%2+1);
+    string mathChar;
+    // random right and left numbers
+    int rightNum = (rand()%10+1);
+    int leftNum = (rand()%10+1);
+    // answer cin holder
+    int actualAnswer;
+    int userAnswer;
+    //math operations
+    switch (mathType) {
+        case 1:
+            mathChar = "+";
+        case 2:
+            mathChar = "-";
+        case 3:
+            mathChar = "*";
+        case 4:
+            mathChar = "/";
+    }
     //math tutor display
     cout << "************************************************************" << endl;
     cout << "*                      MATH TUTOR                          *" << endl;
@@ -31,12 +53,9 @@ int main() {
     cout << "What is your name? ";
     cin >> userName;   //Get username
     cout << "Hello, " << userName << "!" << endl;   //Greet user with name
+    
+    cout << userName << " what is " << rightNum << mathChar << leftNum << "?" << endl;
 
-    cout << endl;
-    cout << "What is 6 + 7 = ";
-    cin >> answer;   //Get answer
-
-    cout << "V1 doesn't check the answer. Stay tuned for V2." << endl;
 
     return 0;
 }
