@@ -16,23 +16,36 @@ int main() {
     string userName;
     // random math opperator
     int mathType = (rand()%2+1);
-    string mathChar;
+    char mathChar;
     // random right and left numbers
     int rightNum = (rand()%10+1);
     int leftNum = (rand()%10+1);
     // answer cin holder
     int actualAnswer;
     int userAnswer;
+    int placeholder = 0;
     //math operations
     switch (mathType) {
         case 1:
-            mathChar = "+";
+            mathChar = '+';
+            actualAnswer = (rightNum + leftNum);
+        break;
         case 2:
-            mathChar = "-";
+            mathChar = '-';
+            if (rightNum < leftNum) {
+                placeholder = rightNum;
+                leftNum = rightNum;
+                rightNum = placeholder;
+            }
+            else
+                
+            actualAnswer = (rightNum - leftNum);
         case 3:
-            mathChar = "*";
+            mathChar = '*';
+            actualAnswer = (rightNum * leftNum);
         case 4:
-            mathChar = "/";
+            mathChar = '/';
+            actualAnswer = (rightNum / leftNum);
     }
     //math tutor display
     cout << "************************************************************" << endl;
