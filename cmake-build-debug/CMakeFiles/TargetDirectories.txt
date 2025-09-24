@@ -1,0 +1,3 @@
+C:/Users/anwies02/OneDrive - Wayne State College/MathTutorV2/cmake-build-debug/CMakeFiles/MathTutorV2.dir
+C:/Users/anwies02/OneDrive - Wayne State College/MathTutorV2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/anwies02/OneDrive - Wayne State College/MathTutorV2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
