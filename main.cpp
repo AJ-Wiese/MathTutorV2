@@ -3,7 +3,8 @@
  * Author: Davy Tran, AJ Wiese
  * Date: 2025.09.22
  * GitHub URL: https://github.com/AJ-Wiese/MathTutorV2
- * Description: Super basic math tutor that has 4 random operators and even checks the problem!
+ * Description: Super basic math tutor that has 4 random operators and even checks the
+ * problem. Will also insult you if you're wrong for maximum teachage
  **************************************************************************************/
 #include <iostream> //Needed for cout and cin
 #include <cstdlib>
@@ -33,23 +34,21 @@ int main() {
 
         case 2:
             mathChar = '-';
-            actualAnswer = (rightNum - leftNum);
-        if (rightNum < leftNum) {
+        if (leftNum < rightNum) {
             placeholder = rightNum;
             rightNum = leftNum;
-            leftNum = placeholder;
-        } else
-            cout << "wrong";
+            leftNum = placeholder;}
+        actualAnswer = (leftNum - rightNum);
         break;
 
         case 3:
             mathChar = '*';
             actualAnswer = (rightNum * leftNum);
         break;
-        
         case 4:
             mathChar = '/';
-            actualAnswer = (rightNum / leftNum);
+            leftNum = rightNum*leftNum;
+            actualAnswer = (leftNum/rightNum);
         break;
     }
     //math tutor display
@@ -64,15 +63,24 @@ int main() {
     cout << "   *All math teachers have cats." << endl;
     cout << "   *Circles are as easy as pi." << endl;
     cout << "   *Do NOT try dividing by zero at home." << endl;
-    cout << "   *All cats have a math teacher." << endl;
+    cout << "   *Fancy Fridays > PJ Fridays." << endl;
 
     cout << "************************************************************" << endl;
 
     cout << "What is your name? ";
-    cin >> userName;   //Get username
+    getline (cin,userName);   //Get username
     cout << "Hello, " << userName << "!" << endl;   //Greet user with name
     
-    cout << userName << " what is " << rightNum << mathChar << leftNum << "?" << endl;
+    cout << userName << " what is " << leftNum << mathChar << rightNum << "?" << endl;
+
+    cin >> userAnswer;
+
+    if (userAnswer==actualAnswer) {
+        cout << "Great job "<< userName <<"!" << endl;
+    }
+    else {
+        cout <<"Ohhhh, so you're an english major";
+    }
 
 
     return 0;
