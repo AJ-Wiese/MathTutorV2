@@ -15,7 +15,7 @@ int main() {
     // initializing variables
     string userName;
     // random math opperator
-    int mathType = (rand()%2+1);
+    int mathType = (rand()%4+1);
     char mathChar;
     // random right and left numbers
     int rightNum = (rand()%10+1);
@@ -30,22 +30,27 @@ int main() {
             mathChar = '+';
             actualAnswer = (rightNum + leftNum);
         break;
+
         case 2:
             mathChar = '-';
-            if (rightNum < leftNum) {
-                placeholder = rightNum;
-                leftNum = rightNum;
-                rightNum = placeholder;
-            }
-            else
-                
             actualAnswer = (rightNum - leftNum);
+        if (rightNum < leftNum) {
+            placeholder = rightNum;
+            rightNum = leftNum;
+            leftNum = placeholder;
+        } else
+            cout << "wrong";
+        break;
+
         case 3:
             mathChar = '*';
             actualAnswer = (rightNum * leftNum);
+        break;
+        
         case 4:
             mathChar = '/';
             actualAnswer = (rightNum / leftNum);
+        break;
     }
     //math tutor display
     cout << "************************************************************" << endl;
